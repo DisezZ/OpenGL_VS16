@@ -45,6 +45,9 @@
     <ClInclude Include="header\shader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="header\window.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\camera.cpp">
@@ -68,13 +71,39 @@
     <ClCompile Include="source\construction\model.cpp">
       <Filter>Source Files\construction</Filter>
     </ClCompile>
+    <ClCompile Include="source\imgui.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\imgui_demo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\imgui_draw.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\imgui_impl_glfw.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\imgui_impl_opengl3.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\imgui_tables.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\imgui_widgets.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\window.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\glx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="backpack\backpack.mtl" />
-    <None Include="resource\shader\cube.fs">
+    <None Include="resource\shader\object.fs">
       <Filter>Resource Files\shader</Filter>
     </None>
-    <None Include="resource\shader\cube-light.fs">
+    <None Include="resource\shader\light.fs">
       <Filter>Resource Files\shader</Filter>
     </None>
     <None Include="resource\shader\shader.fs">

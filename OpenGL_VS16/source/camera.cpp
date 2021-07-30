@@ -32,13 +32,18 @@ glm::mat4 Camera::getViewMatrix()
     return glm::lookAt(position, position + front, up);
 }
 
+glm::vec3 Camera::getViewDir()
+{
+    return front;
+}
+
 void Camera::processKeyboard(Camera_Movement direction, float deltaTime)
 {
     float velocity = speed * deltaTime;
     if (direction == CAM_FORWARD)
-        position += glm::vec3(front.x, 0.0f, front.z) * velocity;
+        position += glm::vec3(cos(glm::radians(yaw)), 0.0f, sin(glm::radians(yaw))) * velocity;
     if (direction == CAM_BACKWARD)
-        position -= glm::vec3(front.x, 0.0f, front.z) * velocity;
+        position -= glm::vec3(cos(glm::radians(yaw)), 0.0f, sin(glm::radians(yaw))) * velocity;
     if (direction == CAM_LEFT)
         position -= right * velocity;
     if (direction == CAM_RIGHT)
@@ -46,7 +51,12 @@ void Camera::processKeyboard(Camera_Movement direction, float deltaTime)
     if (direction == CAM_UP)
         position += worldUp * velocity;
     if (direction == CAM_DOWN)
-        position -= worldUp * velocity;
+        position -= worldUp * velocity; 
+    if (direction == CAM_SPEED_UP)
+        speed = SPEED * 3;
+    if (direction == CAM_SPEED_DOWN)
+        speed = SPEED;
+        
 }
 
 void Camera::processMouseMovement(float offsetX, float offsetY, bool constraintPitch)

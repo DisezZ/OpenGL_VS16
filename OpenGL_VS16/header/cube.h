@@ -22,7 +22,7 @@ private:
     unsigned int VBO;
 public:
     Mesh *mesh;
-    Cube();
+    Cube(bool normal);
     ~Cube();
     void Draw();
     void Draw(Part_Section section);

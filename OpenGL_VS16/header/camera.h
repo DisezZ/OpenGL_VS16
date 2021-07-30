@@ -17,7 +17,9 @@ enum Camera_Movement {
   CAM_LEFT,
   CAM_RIGHT,
   CAM_UP,
-  CAM_DOWN
+  CAM_DOWN,
+  CAM_SPEED_UP,
+  CAM_SPEED_DOWN
 };
 
 // default camera values
@@ -46,6 +48,7 @@ public:
   Camera(glm::vec3 cam_position = glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3 cam_up = glm::vec3(0.0f, 1.0f, 0.0f), float pitch = PITCH, float yaw = YAW);
   ~Camera();
   glm::mat4 getViewMatrix();
+  glm::vec3 getViewDir();
   void processKeyboard(Camera_Movement direction, float deltaTime);
   void processMouseMovement(float offsetX, float offsetY, bool constraintPitch = true);
   void processMouseScroll(float offsetY);
